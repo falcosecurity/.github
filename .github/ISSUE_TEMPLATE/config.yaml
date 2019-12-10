@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Support
+    url: https://slack.sysdig.com
+    about: Please ask and answer questions here.
+  - name: Security
+    url: https://github.com/falcosecurity/.github/blob/master/SECURITY.md
+    about: Please report security vulnerabilities here.
