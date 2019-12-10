@@ -10,11 +10,11 @@ Security updates will typically only be applied to the latest release (at least 
 
 | Version.   | Supported          |
 | ---------- | ------------------ |
-| >=0.15.x   | :white_check_mark: |
+| >=0.18.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-To report a security issue, email opensource@sysdig.com and include the word "SECURITY" in the subject line.
+To report a security issue, email [opensource@sysdig.com](mailto:opensource@sysdig.com?subject=SECURITY) and include the word "SECURITY" in the subject line.
 
 The **Falco** team will send a response indicating the next steps in handling your report. After the initial reply to your report, the team will keep you informed of the progress towards a fix and full announcement, and may ask for additional information or guidance.
 
