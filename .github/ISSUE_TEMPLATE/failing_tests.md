@@ -2,7 +2,7 @@
 name: Failing tests
 about: Report test failures
 title: ''
-labels: kind/failing-tests
+labels: kind/failing-test
 assignees: ''
 
 ---
