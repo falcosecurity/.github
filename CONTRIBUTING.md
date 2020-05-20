@@ -22,7 +22,7 @@ to which all contributors must adhere, please read it before interacting with th
 
 ### Community
 
-Discussion and **support requests** should go through the `#falco` channel in the [open source slack](https://slack.sysdig.com).
+Discussion and **support requests** should go through the `#falco` channel in the [Kubernetes slack](https://slack.k8s.io).
 
 [Join the **mailing list**](https://lists.cncf.io/g/cncf-falco-dev/) for news, announcements, and a Google calendar invite for our Falco open source meetings.
 
