@@ -26,7 +26,7 @@ Please chat and ask questions on [slack](https://slack.sysdig.com)!
 
 Jump in there and lurk, talk to us, and help others.
 
-In case you have topics you would like to discuss we also have bi-weekly [community calls](https://github.com/falcosecurity/community) on [Wednesdays at 8am Pacific](https://lists.cncf.io/g/cncf-falco-dev/calendar) via [Zoom](https://sysdig.zoom.us/j/213235330).
+In case you have topics you would like to discuss we also have bi-weekly [community calls](https://github.com/falcosecurity/community) on [Wednesdays at 8am Pacific](https://lists.cncf.io/g/cncf-falco-dev/calendar) via [Zoom](https://zoom.us/my/cncffalcoproject).
 
 ### Channels
 
