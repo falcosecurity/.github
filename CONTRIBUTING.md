@@ -28,7 +28,7 @@ Discussion and **support requests** should go through the `#falco` channel in th
 
 We also run bi-weekly **community calls** which are open calls to discuss Falco projects from an user perspective. In case you want to discuss a topic during those calls you can simply propose it opening an issue in the [community](https://github.com/falcosecurity/community) repository and join the call!
 
-[Wednesdays at 8am Pacific](https://lists.cncf.io/g/cncf-falco-dev/calendar) on [Zoom](https://sysdig.zoom.us/j/213235330).
+[Wednesdays at 8am Pacific](https://lists.cncf.io/g/cncf-falco-dev/calendar) on [Zoom](https://zoom.us/my/cncffalcoproject).
 
 ## Issues
 
