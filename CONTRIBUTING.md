@@ -2,17 +2,21 @@
 
 We are really glad you are reading this, because we need volunteer developers to help this project come to fruition.
 
-- [Code of Conduct](#code-of-conduct)
-- [Community](#community)
-- [Issues](#issues)
-  - [Triaging](#triaging)
-    - [More about labels](#more-about-labels)
-- [Pull Requests](#pull-requests)
-  - [Commit convention](#commit-convention)
-    - [Rule type](#rule-type)
-- [Coding Guidelines](#coding-guidelines)
-  - [C++](#c)
-- [Developer Certificate Of Origin](#developer-certificate-of-origin)
+- [How to contribute](#how-to-contribute)
+  - [Code of Conduct](#code-of-conduct)
+  - [Community](#community)
+  - [Contributing](#contributing)
+    - [Contributor of the month](#contributor-of-the-month)
+    - [Issues](#issues)
+    - [Triaging](#triaging)
+      - [More about labels](#more-about-labels)
+    - [Pull Requests](#pull-requests)
+    - [Reviews](#reviews)
+    - [Commit convention](#commit-convention)
+      - [Rule type](#rule-type)
+  - [Coding Guidelines](#coding-guidelines)
+  - [Developer Certificate Of Origin](#developer-certificate-of-origin)
+  - [How do I become a maintainer?](#how-do-i-become-a-maintainer)
 
 ## Code of Conduct
 
@@ -20,17 +24,39 @@ Falco projects have a
 [Code of Conduct](CODE_OF_CONDUCT.md)
 to which all contributors must adhere, please read it before interacting with the repository or the community in any way.
 
-### Community
+## Community
 
 Discussion and **support requests** should go through the `#falco` channel in the [Kubernetes slack](https://slack.k8s.io).
 
 [Join the **mailing list**](https://lists.cncf.io/g/cncf-falco-dev/) for news, announcements, and a Google calendar invite for our Falco open source meetings.
 
-We also run bi-weekly **community calls** which are open calls to discuss Falco projects from an user perspective. In case you want to discuss a topic during those calls you can simply propose it opening an issue in the [community](https://github.com/falcosecurity/community) repository and join the call!
+We also run weekly **community calls** which are open calls to discuss Falco projects from an user perspective. In case you want to discuss a topic during those calls you can simply add it to
+this week's [agenda](https://hackmd.io/3qYPnZPUQLGKCzR14va_qg).
 
-[Wednesdays at 8am Pacific](https://lists.cncf.io/g/cncf-falco-dev/calendar) on [Zoom](https://zoom.us/my/cncffalcoproject).
+[Wednesdays at 4PM UTC](https://lists.cncf.io/g/cncf-falco-dev/calendar) on [Zoom](https://zoom.us/my/cncffalcoproject).
 
-## Issues
+You can subscribe to the calendar with GNOME Calendar, iCal, Google Calendar, or your favorite application using this ICS feed:
+
+```console
+https://lists.cncf.io/g/cncf-falco-dev/ics/4188901/1750099167/feed.ics
+```
+
+## Contributing
+
+All the `falcosecurity` projects use the help of the @poiana bot for their governance, contributing workflow, and triaging.
+
+You can familiarize with the available slash commands by reading the [@poiana help](https://prow.falco.org/command-help).
+
+It is also suggested to familiarize with the [@poiana plugins](https://prow.falco.org/plugins), too.
+
+### Contributor of the month
+
+The title of “Contributor of the Month” is awarded to an outstanding contributor for the month of the year.
+
+See our [contributors "Hall of Fame" on the Falco website](https://falco.org/docs/contribute/contributor-of-the-month) to
+see who went above and beyond!
+
+### Issues
 
 Issues are the heartbeat ❤️ of the Falco projects, there are mainly three kinds of issues you can open:
 
@@ -51,15 +77,15 @@ We need help in categorizing issues. Thus any help is welcome!
 
 When you triage an issue, you:
 
-* assess whether it has merit or not
+- assess whether it has merit or not
 
-* quickly close it by correctly answering a question
+- quickly close it by correctly answering a question
 
-* point the reporter to a resource or documentation answering the issue
+- point the reporter to a resource or documentation answering the issue
 
-* tag it via labels, projects, or milestones
+- tag it via labels, projects, or milestones
 
-* take ownership submitting a PR for it, in case you want 😇
+- take ownership submitting a PR for it, in case you want 😇
 
 #### More about labels
 
@@ -73,23 +99,23 @@ You can use commands - eg., `/label <some-label>` to add (or remove) labels or m
 
 The commands available are the following ones:
 
-```
+```console
 /[remove-](area|kind|priority|triage|label)
 ```
 
 Some examples:
 
-* `/area rules`
-* `/remove-area rules`
-* `/kind kernel-module`
-* `/label good-first-issue`
-* `/triage duplicate`
-* `/triage unresolved`
-* `/triage not-reproducible`
-* `/triage support`
-* ...
+- `/area rules`
+- `/remove-area rules`
+- `/kind kernel-module`
+- `/label good-first-issue`
+- `/triage duplicate`
+- `/triage unresolved`
+- `/triage not-reproducible`
+- `/triage support`
+- ...
 
-## Pull Requests
+### Pull Requests
 
 Thanks for taking time to make a [pull request](https://help.github.com/articles/about-pull-requests) (hereafter PR).
 
@@ -107,17 +133,23 @@ Once your reviewer is happy, they will say `/lgtm` which will apply the
 Your PR will be automatically merged once it has the `lgtm` and `approved`
 labels, does not have any `do-not-merge/*` labels, and all status checks (eg., rebase, tests, DCO) are positive.
 
+### Reviews
+
+Reviewing a pull request is also a very good way of contributing
 ### Commit convention
 
 As commit convention, we adopt [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/), we have an history
-of commits that do not adopt the convention but any new commit must follow it to be eligible for merge.
+of commits that do not adopt the convention but any new commit should follow it.
+
+Pull requests towards projects using the `release-note` plugin MUST have release note following such convention to be eligible for merge.
 
 #### Rule type
 
 Besides the classic types, we adopt a type for rules, `rule(<scope>):`.
+
 Example:
 
-```
+```console
 rule(Write below monitored dir): make sure monitored dirs are monitored.
 ```
 
@@ -125,18 +157,15 @@ Each rule change must be on its own commit, if a change to a macro is done while
 
 If you are changing only a macro, the commit will look like this:
 
-```
+```console
 rule(macro user_known_write_monitored_dir_conditions): make sure conditions are great
 ```
 
+Notice this section applies to `falcosecurity/falco` only.
+
 ## Coding Guidelines
 
-### C++
-
-* File `falco/userspace/engine/banned.h` defines some functions as invalid tokens. These functions are not allowed to be used in the codebase. Whenever creating a new cpp file, include the `"banned.h"` headers. This ensures that the banned functions are not compiled.
-
-  A complete list of banned functions can be found [here](https://github.com/falcosecurity/falco/blob/master/userspace/engine/banned.h).
-
+This is handled on a per-repository basis.
 
 ## Developer Certificate Of Origin
 
@@ -144,7 +173,7 @@ The [Developer Certificate of Origin (DCO)](https://developercertificate.org/) i
 
 Contributors to the Falco project sign-off that they adhere to these requirements by adding a `Signed-off-by` line to commit messages.
 
-```
+```console
 This is my commit message
 
 Signed-off-by: John Poiana <jpoiana@falco.org>
@@ -152,15 +181,24 @@ Signed-off-by: John Poiana <jpoiana@falco.org>
 
 Git even has a `-s` command line option to append this automatically to your commit message:
 
+```console
+git commit -s -m 'This is my commit message'
 ```
-$ git commit -s -m 'This is my commit message'
-```
+
 If you have already made a commit and forgot to include the sign-off, you can amend your last commit
 to add the sign-off with the following command, which can then be force pushed.
 
-```
+```console
 git commit --amend -s
 ```
 
 We use a [poiana](https://github.com/poiana) to enforce the DCO on each pull
-request and branch commits.
+request and branch commits of every `falcosecurity` project.
+
+## How do I become a maintainer?
+
+The procedure on how to get involved as a maintainer is described in the [GOVERNANCE.md](GOVERNANCE.md) file in this repository.
+
+Becoming a maintainer is a time investment, you will need to commit to have time to be available for the project.
+
+**Remember**: you don't have to be a maintainer to make a difference here, just start helping and our community will immediately recognize and make you feel at home!
