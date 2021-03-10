@@ -135,7 +135,8 @@ labels, does not have any `do-not-merge/*` labels, and all status checks (eg., r
 
 ### Reviews
 
-Reviewing a pull request is also a very good way of contributing
+Reviewing a pull request is also a very good way of contributing.
+
 ### Commit convention
 
 As commit convention, we adopt [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/), we have an history
