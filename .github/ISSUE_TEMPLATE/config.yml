@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Support
-    url: https://kubernetes.slack.com/?redir=%2Fmessages%2Ffalco
-    about: Please ask and answer questions in the #falco channel (Kubernetes Slack)
+    url: https://kubernetes.slack.com/messages/falco
+    about: Please ask and answer questions in the `#falco` channel on Kubernetes Slack
