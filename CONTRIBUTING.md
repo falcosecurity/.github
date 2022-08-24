@@ -203,9 +203,7 @@ request and branch commits of every `falcosecurity` project.
 
 ## How do I become a maintainer?
 
-The procedure on how to get involved as a maintainer is described in the [GOVERNANCE.md](GOVERNANCE.md) file in this repository.
-
-Becoming a maintainer is a time investment, you will need to commit to have time to be available for the project.
+The procedure on how to get involved as a maintainer is described in the [MAINTAINERS_GUIDELINES.md](https://github.com/falcosecurity/evolution/blob/master/MAINTAINERS_GUIDELINES.md) file in the [falcosecurity/evolution](https://github.com/falcosecurity/evolution)  repository.
 
 **Remember**: you don't have to be a maintainer to make a difference here, just start helping and our community will immediately
 recognize and make you feel at home!
