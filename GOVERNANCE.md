@@ -1,6 +1,6 @@
 # Governance
 
-The governance document has been moved to the [falcosecurity/evolution](https://github.com/falcosecurity/evolution/blob/master/GOVERNANCE.md) repository.
+The governance document has been moved to the [falcosecurity/evolution](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md) repository.
 
 **Helpful resources**
 
