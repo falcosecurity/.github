@@ -158,7 +158,7 @@ Example:
 rule(Write below monitored dir): make sure monitored dirs are monitored.
 ```
 
-Each rule change should be on its own commit. If a change to a macro is done while changing a rule they can go together, but one rule per commit is the best practice.
+Each rule change MUST be on its own commit. If a change to a macro is done while changing a rule they can go together, but one rule per commit is the best practice.
 
 If you are changing only a macro, the commit will look like this:
 
@@ -166,7 +166,7 @@ If you are changing only a macro, the commit will look like this:
 rule(macro user_known_write_monitored_dir_conditions): make sure conditions are great
 ```
 
-If the repository requires a `release-note` block on PRs, you must also report all rule changes in the release notes.
+If the repository requires a `release-note` block on PRs, you MUST also report all rule changes in the release notes (one line per change).
 
 Notice this section only applies to those repositories that provide rules files, for example, [falcosecurity/falco](https://github.com/falcosecurity/falco) and [falcosecurity/plugins](https://github.com/falcosecurity/plugins).
 
