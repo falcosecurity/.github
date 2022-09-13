@@ -177,7 +177,11 @@ Notice this section only applies to those repositories that provide rules files,
 
 ## Coding Guidelines
 
-This is handled on a per-repository basis.
+This is handled on a per-repository basis. However, general guidelines are assumed:
+
+- reference guidelines of the code language used should be followed;
+- significant functionality should come with appropriate testing to be run in the automated test suite;
+- if third-party code is used, all licenses must be preserved and be compatible with our [licensing requirements](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#license).
 
 ## Developer Certificate Of Origin
 
