@@ -146,11 +146,16 @@ labels, does not have any `do-not-merge/*` labels, and all status checks (eg., r
 
 As commit convention, we adopt [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0.0/). We have a history of commits that do not assume the convention, but any new commit should follow it.
 
+The most important elements in the commit message to communicating the intent to the consumers are:
+ - `fix:` type when patching a bug
+ - `feat:` (or `new:`) type when introducing a new feature
+ - Appending `!` after the type/scope or `BREAKING CHANGE:` to the footer when introducing a breaking change
+ 
 Some repositories require a `release-note` block on PRs.  In such a case, the release notes MUST follow the Conventional Commits convention to be eligible for merge.
 
 #### Rule type
 
-Besides the classic types, we adopt a type for rules, `rule(<scope>):`.
+Besides the classic types (`fix:`, `new:`, `chore:`, `docs:`, etc), we adopt a type for rules, `rule(<scope>):`.
 
 Example:
 
