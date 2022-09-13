@@ -14,9 +14,9 @@ We are really glad you are reading this, because we need volunteer developers to
   * [Reviews](#reviews)
   * [Commit convention](#commit-convention)
     * [Rule type](#rule-type)
-  * [Contributor of the month](#contributor-of-the-month)
 * [Coding Guidelines](#coding-guidelines)
 * [Developer Certificate Of Origin](#developer-certificate-of-origin)
+* [Contributor of the month](#contributor-of-the-month)
 * [How do I become a maintainer?](#how-do-i-become-a-maintainer)
 
 **Resources**
