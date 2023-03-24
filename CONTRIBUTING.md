@@ -11,6 +11,8 @@ We are really glad you are reading this, because we need volunteer developers to
   * [Triaging](#triaging)
     * [More about labels](#more-about-labels)
   * [Pull Requests](#pull-requests)
+  * [Resolving Conflicts by Rebasing](#resolving-conflicts-by-rebasing)
+    * [Avoiding Issues with the Commit Sign-off](#avoiding-issues-with-the-commit-sign-off)
   * [Reviews](#reviews)
   * [Commit convention](#commit-convention)
     * [Rule type](#rule-type)
@@ -141,6 +143,74 @@ Once your reviewer is happy, they will say `/lgtm`, which will apply the
 
 Your PR will be automatically merged once it has the `lgtm` and `approved`
 labels, does not have any `do-not-merge/*` labels, and all status checks (eg., rebase, tests, DCO) are positive.
+
+### Resolving Conflicts by Rebasing
+
+When submitting a pull request, it's important to make sure that it can be cleanly merged into the upstream repository. In some cases, conflicts may arise when attempting to merge a pull request, such as when changes have been made to the same file or lines of code.
+
+To resolve conflicts, we always use the `git rebase` command rather than git merge. This helps to ensure a clean and linear history of commits.
+
+Here's the process for rebasing a pull request to resolve conflicts:
+
+1. Ensure that your local repository is up to date with the upstream repository:
+
+```
+git remote add upstream <upstream_repository_url>
+git fetch upstream
+git checkout main
+git rebase upstream/main
+```
+
+2. Create a new branch for your changes:
+
+```
+git checkout -b my-feature-branch
+```
+
+3. Make your changes and commit them to your local branch:
+
+```
+git add .
+git commit -s -m "my commit message"
+```
+
+4. Push your changes to your forked repository:
+
+```
+git push origin my-feature-branch
+```
+
+5. If you receive a notification of conflicts, rebase your branch on the upstream master branch:
+
+```
+git fetch upstream
+git rebase -s -i upstream/main
+```
+
+6. If there are conflicts, resolve them and then continue the rebase process:
+
+```
+git add .
+git rebase --continue
+```
+
+7. Push your changes back to your forked repository with force and with lease:
+
+```
+git push --force-with-lease
+```
+   Furthermore, to force the update of a branch with your local changes, you can use the `--force` flag with the git push command. This flag overwrites the remote branch's current state with your local changes, and this can cause problems if other contributors have made changes to the same branch. Because of that, we strongly reccomend to use the `--force-with-lease` flag that is a safer alternative to the `--force` flag. It allows you to force the update of a branch with your local changes, but only if the branch on the remote repository is in the same state as you expect. In other words, the `--force-with-lease` flag checks whether the remote branch has been updated since you last fetched it. If it has, the push is rejected, preventing you from overwriting someone else's changes. Using `--force-with-lease` can help prevent data loss and conflicts caused by overwriting someone else's changes.
+
+*Note*: It's important to never rebase a branch that has already been pushed to a public repository. Doing so can cause issues with the commit sign-off and create a messy history of commits.
+
+If you have any questions or run into any issues, feel free to reach out to our community for support.
+
+#### Avoiding Issues with the Commit Sign-off
+
+In some cases, when using the `--force-with-lease` flag to push changes, you may run into issues with the commit sign-off. This can happen if the branch has already been signed off by another contributor, and your force push changes the branch history.
+
+As shown above, to avoid issues with the commit sign-off, you should use the `--force-with-lease` flag with the git push command, along with the `--signoff` flag with the git commit command. This will ensure that your commits are properly signed off and tracked.
+
 
 ### Commit convention
 
