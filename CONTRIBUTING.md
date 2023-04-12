@@ -150,51 +150,38 @@ When submitting a pull request, it's important to make sure that it can be clean
 
 To resolve conflicts, we always use the `git rebase` command rather than git merge. This helps to ensure a clean and linear history of commits.
 
+First of all we take for granted some assumptions:
+
+- the contributor is using a **fork**
+
+- the default branch is `main`
+
 Here's the process for rebasing a pull request to resolve conflicts:
 
 1. Ensure that your local repository is up to date with the upstream repository:
 
 ```
+git checkout -b my-feature-branch
+git pull
 git remote add upstream <upstream_repository_url>
 git fetch upstream
-git checkout main
-git rebase upstream/main
 ```
 
-2. Create a new branch for your changes:
+2. Start the rebase process interactively (`-i`):
 
 ```
-git checkout -b my-feature-branch
+git rebase --signoff -i upstream/main
 ```
 
-3. Make your changes and commit them to your local branch:
+3. If there are conflicts, resolve them and then continue the rebase process:
 
 ```
-git add .
-git commit -s -m "my commit message"
-```
-
-4. Push your changes to your forked repository:
-
-```
-git push origin my-feature-branch
-```
-
-5. If you receive a notification of conflicts, rebase your branch on the upstream master branch:
-
-```
-git fetch upstream
-git rebase -s -i upstream/main
-```
-
-6. If there are conflicts, resolve them and then continue the rebase process:
-
-```
-git add .
+git add <file-that-conflicts>
 git rebase --continue
 ```
+4. Repeat the above step for each conflict.
 
-7. Push your changes back to your forked repository with force and with lease:
+5. Push your changes back to your forked repository with `--force-with-lease`:
 
 ```
 git push --force-with-lease
@@ -204,12 +191,6 @@ git push --force-with-lease
 *Note*: It's important to never rebase a branch that has already been pushed to a public repository. Doing so can cause issues with the commit sign-off and create a messy history of commits.
 
 If you have any questions or run into any issues, feel free to reach out to our community for support.
-
-#### Avoiding Issues with the Commit Sign-off
-
-In some cases, when using the `--force-with-lease` flag to push changes, you may run into issues with the commit sign-off. This can happen if the branch has already been signed off by another contributor, and your force push changes the branch history.
-
-As shown above, to avoid issues with the commit sign-off, you should use the `--force-with-lease` flag with the git push command, along with the `--signoff` flag with the git commit command. This will ensure that your commits are properly signed off and tracked.
 
 
 ### Commit convention
