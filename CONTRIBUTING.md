@@ -2,6 +2,8 @@
 
 We are really glad you are reading this, because we need volunteer developers to help this project come to fruition.
 
+> Please ensure to allocate time to thoroughly read and comprehend this entire guide, as well as The Falco Project's [code review process](contributing/review-process.md), before submitting any code changes. This will help facilitate a timely and seamless review process.
+
 **Table of Contents**
 
 * [Code of Conduct](#code-of-conduct)
