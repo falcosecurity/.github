@@ -15,7 +15,6 @@ We are really glad you are reading this, because we need volunteer developers to
     * [Avoiding Issues with the Commit Sign-off](#avoiding-issues-with-the-commit-sign-off)
   * [Reviews](#reviews)
   * [Commit convention](#commit-convention)
-    * [Rule type](#rule-type)
 * [Coding Guidelines](#coding-guidelines)
 * [Developer Certificate Of Origin](#developer-certificate-of-origin)
 * [Contributor of the month](#contributor-of-the-month)
@@ -203,28 +202,6 @@ The most important elements in the commit message to communicating the intent to
  - Appending `!` after the type/scope or `BREAKING CHANGE:` to the footer when introducing a breaking change
  
 Some repositories require a `release-note` block on PRs.  In such a case, the release notes MUST follow the Conventional Commits convention to be eligible for merge.
-
-#### Rule type
-
-Besides the classic types (`fix:`, `new:`, `chore:`, `docs:`, etc), we adopt a type for rules, `rule(<scope>):`.
-
-Example:
-
-```console
-rule(Write below monitored dir): make sure monitored dirs are monitored.
-```
-
-Each rule change MUST be on its own commit. If a change to a macro is done while changing a rule they can go together, but one rule per commit is the best practice.
-
-If you are changing only a macro, the commit will look like this:
-
-```console
-rule(macro user_known_write_monitored_dir_conditions): make sure conditions are great
-```
-
-If the repository requires a `release-note` block on PRs, you MUST also report all rule changes in the release notes (one line per change).
-
-Notice this section only applies to those repositories that provide rules files, for example, [falcosecurity/falco](https://github.com/falcosecurity/falco) and [falcosecurity/plugins](https://github.com/falcosecurity/plugins).
 
 ## Coding Guidelines
 
