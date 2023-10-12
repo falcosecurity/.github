@@ -14,7 +14,6 @@ We are really glad you are reading this, because we need volunteer developers to
     * [More about labels](#more-about-labels)
   * [Pull Requests](#pull-requests)
   * [Resolving Conflicts by Rebasing](#resolving-conflicts-by-rebasing)
-    * [Avoiding Issues with the Commit Sign-off](#avoiding-issues-with-the-commit-sign-off)
   * [Reviews](#reviews)
   * [Commit convention](#commit-convention)
 * [Coding Guidelines](#coding-guidelines)
@@ -193,6 +192,11 @@ git push --force-with-lease
 
 If you have any questions or run into any issues, feel free to reach out to our community for support.
 
+### Reviews
+
+Reviewing a pull request is also a very good way of contributing. 
+
+If you want to review PR often to help the project, you may want to be recognized as a reviewer. You can find more info on becoming a reviewer [here](https://github.com/falcosecurity/evolution/blob/main/MAINTAINERS_GUIDELINES.md#onboarding-a-reviewer).
 
 ### Commit convention
 
@@ -239,13 +243,7 @@ to add the sign-off with the following command, which can then be force pushed.
 git commit --amend -s
 ```
 
-We use [@poiana](https://github.com/poiana) to enforce the DCO on each pull request and branch commits of every `falcosecurity` respository.
-
-### Reviews
-
-Reviewing a pull request is also a very good way of contributing. 
-
-If you want to review PR often to help the project, you may want to be recognized as a reviewer. You can find more info on becoming a reviewer [here](https://github.com/falcosecurity/evolution/blob/main/MAINTAINERS_GUIDELINES.md#onboarding-a-reviewer).
+We use [@poiana](https://github.com/poiana) to enforce the DCO on each pull request and branch commits of every `falcosecurity` respository
 
 ## Contributor of the month
 
