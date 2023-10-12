@@ -17,6 +17,7 @@ We are really glad you are reading this, because we need volunteer developers to
   * [Reviews](#reviews)
   * [Commit convention](#commit-convention)
 * [Coding Guidelines](#coding-guidelines)
+* [Licensing Guidelines](#licensing-guidelines)
 * [Developer Certificate Of Origin](#developer-certificate-of-origin)
 * [Contributor of the month](#contributor-of-the-month)
 * [How do I become a maintainer?](#how-do-i-become-a-maintainer)
@@ -215,7 +216,17 @@ This is handled on a per-repository basis. However, general guidelines are assum
 
 - reference guidelines of the code language used should be followed;
 - significant functionality should come with appropriate testing to be run in the automated test suite;
-- if third-party code is used, all licenses must be preserved and be compatible with our [licensing requirements](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#license).
+- [licensing guidelines](#licensing-guidelines) must be followed.
+## Licensing Guidelines
+
+The following guidelines apply to all repositories under the `falcosecurity` organization:
+
+- our Governance's [licensing requirements](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#license) must be respected;
+- unless otherwise specified, all code must be licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0);
+- each repository must have a `LICENSE` file in its root folder;
+- all new inbound code contributions must be signed off with the [Developer Certificate of Origin](#developer-certificate-of-origin);
+- all source file headers must include the corresponding [SPDX license identifier](https://spdx.dev/ids);
+- if third-party code is used, their licenses must be vetted to ensure compatibility with our [licensing requirements](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#license).
 
 ## Developer Certificate Of Origin
 
