@@ -41,7 +41,7 @@ In The Falco Project, we strive to foster a positive and constructive environmen
 ## How the Review Process Works
 
  The author submits a PR. 
-- step 1: Automation(@poiana) suggests reviewers for the PR 
+- Automation(@poiana) suggests reviewers for the PR 
 
   - Determine the set of OWNERS files.
   - choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
