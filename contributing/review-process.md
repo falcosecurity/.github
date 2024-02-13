@@ -58,7 +58,7 @@ In The Falco Project, we strive to foster a positive and constructive environmen
   - for ``falco`` and ``libs``
   repositeries we require double approval from maintainers and we should explain why and when using this strategy. 
   - If the code changes look good to approver, an approver types ``/approve`` in a PR comment; if they change their mind, they ``/approve`` cancel
-  - Alongside the Prow workflow, Falco enforce GitHub reviews too. Simply using ``/approve`` is insufficient; ``approver`` must additionally select the 'Approved' checkbox and click the 'Submit review' button on the GitHub UI
+  - Alongside the Prow workflow, Falco enforce GitHub reviews too. Simply using ``/approve`` is insufficient; approver must additionally select the 'Approved' checkbox and click the 'Submit review' button on the GitHub UI
   - A positive GitHub review implies the approved label, so approver doesn't have to write ``/approve`` explicitly; however, ``test-infra`` repositery requires an explicit /approve
   - Once all approver (atleast one) have approved, @poianna applies an ``approved`` label. 
 
