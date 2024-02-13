@@ -38,6 +38,38 @@ In The Falco Project, we strive to foster a positive and constructive environmen
 - When expressing your code style preferences, please prioritize specific style modifications that bring clear benefits to the project in terms of performance or maintainability. It is important to avoid excessive emphasis on personal style. This approach promotes inclusivity and respect for different coding styles, as long as they align with the project's best interests.
 - Please remember that in the realm of security, striking a balance between speed, caution, and code reorganization is crucial, considering that time is of the essence. This balanced approach allows us to effectively support the necessary capabilities for enhanced threat detection, performance, and scalability benefits within reasonable timelines.
 
+## How the Review Process Works
+
+ The author submits a PR. 
+- step 1: Automation(@poiana) suggests reviewers for the PR 
+
+  - Determine the set of OWNERS files.
+  - choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
+- Phase 1: Humans review the PR 
+   - Reviewers look for general code quality, correctness, sane software engineering, style, etc.
+   - Anyone member of falco can act as a reviewer with the exception of the individual who opened the PR.
+   - if the code changes look good to them, a reviewer types ```lgtm``` in a PR comment or review; if they change their mind they ```/lgtm cancel``` 
+   - once a reviewer has ```/lgtm```'ed, @poiana applies an ```lgtm``` label to the PR.
+
+- Phase 2: Humans approve the PR 
+  - The PR author ```/assign```'s suggested approvers to the PR, and optionally notifies them(eg: pinging @foo for approval)
+  - Only people listed in the relevant OWNERS files, either directly or through an alias, can act as APPROVERS, including the individual who opened the PR. 
+  - Approvers look for holistic acceptance criteria, including dependencies with other features, forwards/backwards compatibility, API and flag definitions, etc
+  - for ``falco`` and ``libs``
+  repositeries we require double approval from maintainers and we should explain why and when using this strategy. 
+  - If the code changes look good to approver, an approver types ``/approve`` in a PR comment; if they change their mind, they ``/approve`` cancel
+  - Alongside the Prow workflow, Falco enforce GitHub reviews too. Simply using ``/approve`` is insufficient; ``approver`` must additionally select the 'Approved' checkbox and click the 'Submit review' button on the GitHub UI
+  - A positive GitHub review implies the approved label, so approver doesn't have to write ``/approve`` explicitly; however, ``test-infra`` repositery requires an explicit /approve
+  - Once all approver (atleast one) have approved, @poianna applies an ``approved`` label. 
+
+- Phase 3: Automation merges the PR: 
+  - if all of the following are TRUE:
+    - All required labels are present (eg: lgtm, approved)
+    - any blocking labels are missing  (eg: there is no do-not-merge/hold, needs-rebase)
+  - And if any of the following are true:
+    - there are no presubmit prow jobs configured for this repo 
+    - there are presubmit prow jobs configured for this repo, and they all pass after automatically being re-run one last time 
+  - then PR will automatically be merged. 
 
 ## Thank You Note
 
