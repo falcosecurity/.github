@@ -46,7 +46,7 @@ In The Falco Project, we strive to foster a positive and constructive environmen
 
   - Determine the set of [OWNERS](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#repository-ownership) files.
   - Choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
-- Humans review the PR 
+- Humans review the PR:
    - Reviewers look for general code quality, correctness, sane software engineering, style, etc.
    - Anyone member of falco can act as a reviewer with the exception of the individual who opened the PR.
    - if the code changes look good to them, a reviewer types ```lgtm``` in a PR comment or review; if they change their mind they ```/lgtm cancel``` 
