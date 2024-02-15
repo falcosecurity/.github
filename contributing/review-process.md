@@ -48,9 +48,9 @@ In The Falco Project, we strive to foster a positive and constructive environmen
   - Choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
 - Humans review the PR:
    - Reviewers look for general code quality, correctness, style and follow [reviewers guideline](#guidelines-for-code-reviewers)
-   - Anyone member of falco can act as a reviewer with the exception of the individual who opened the PR.
-   - if the code changes look good to them, a reviewer types ```lgtm``` in a PR comment or review; if they change their mind they ```/lgtm cancel``` 
-   - once a reviewer has ```/lgtm```'ed, @poiana applies an ```lgtm``` label to the PR.
+   - Anyone in the determined set of OWNERS (including both `reviewers` and `approvers`) can act as a reviewer, with the exception of the individual who opened the PR.
+   - If the code changes look good to them, a reviewer types `/lgtm` in a PR comment or selects the _Approved_ checkbox and clicks the _Submit review_ button on the GitHub UI; if they change their mind, they can use `/lgtm cancel.`
+   - Once a reviewer has `/lgtm`'ed, [@poiana](https://github.com/poiana) applies an `lgtm` label to the PR.
 
 - Humans approve the PR:
   - The PR author ```/assign```'s suggested approvers to the PR, and optionally notifies them(eg: pinging @foo for approval)
