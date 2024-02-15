@@ -40,7 +40,8 @@ In The Falco Project, we strive to foster a positive and constructive environmen
 
 ## How the Review Process Works
 
- The author submits a PR. 
+ - The author submits a PR.
+
 - Automation(@poiana) suggests reviewers for the PR 
 
   - Determine the set of OWNERS files.
