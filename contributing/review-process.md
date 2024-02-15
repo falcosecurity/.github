@@ -52,7 +52,7 @@ In The Falco Project, we strive to foster a positive and constructive environmen
    - if the code changes look good to them, a reviewer types ```lgtm``` in a PR comment or review; if they change their mind they ```/lgtm cancel``` 
    - once a reviewer has ```/lgtm```'ed, @poiana applies an ```lgtm``` label to the PR.
 
-- Humans approve the PR 
+- Humans approve the PR:
   - The PR author ```/assign```'s suggested approvers to the PR, and optionally notifies them(eg: pinging @foo for approval)
   - Only people listed in the relevant OWNERS files, either directly or through an alias, can act as APPROVERS, including the individual who opened the PR. 
   - Approvers look for holistic acceptance criteria, including dependencies with other features, forwards/backwards compatibility, API and flag definitions, etc
