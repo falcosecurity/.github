@@ -63,13 +63,15 @@ In The Falco Project, we strive to foster a positive and constructive environmen
   - Once at least one approver has approved, [@poiana](https://github.com/poiana) applies the `approved` label.
 
 - Automation merges the PR: 
-  - if all of the following are TRUE:
-    - All required labels are present (eg: lgtm, approved)
-    - any blocking labels are missing  (eg: there is no do-not-merge/hold, needs-rebase)
-  - And if any of the following are true:
-    - there are no presubmit prow jobs configured for this repo 
-    - there are presubmit prow jobs configured for this repo, and they all pass after automatically being re-run one last time 
-  - then PR will automatically be merged. 
+  - If all of the following are **true**:
+    - All required labels are present (eg: `lgtm`, `approved`);
+    - Any blocking labels are missing  (eg: there is no `do-not-merge/hold`, `needs-rebase`):
+    - All GitHub PR checks marked as _required_ are passing;
+    - The PR got sufficient approving GitHub review(s) (usually, only one positive review is sufficient).
+ - And if any of the following are true:
+    - There are no presubmit Prow jobs configured for this repo; 
+    - There are presubmit Prow jobs configured for this repo, and they all pass after automatically being re-run one last time. 
+  - Then PR will automatically be merged by [@poiana](https://github.com/poiana).
 
 ## Thank You Note
 
