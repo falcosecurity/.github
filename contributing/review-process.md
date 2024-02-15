@@ -45,7 +45,7 @@ In The Falco Project, we strive to foster a positive and constructive environmen
 - Automation ([@poiana](https://github.com/poiana)) suggests reviewers for the PR:
 
   - Determine the set of [OWNERS](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#repository-ownership) files.
-  - choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
+  - Choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
 - Humans review the PR 
    - Reviewers look for general code quality, correctness, sane software engineering, style, etc.
    - Anyone member of falco can act as a reviewer with the exception of the individual who opened the PR.
