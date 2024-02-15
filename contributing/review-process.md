@@ -53,15 +53,14 @@ In The Falco Project, we strive to foster a positive and constructive environmen
    - Once a reviewer has `/lgtm`'ed, [@poiana](https://github.com/poiana) applies an `lgtm` label to the PR.
 
 - Humans approve the PR:
-  - The PR author ```/assign```'s suggested approvers to the PR, and optionally notifies them(eg: pinging @foo for approval)
-  - Only people listed in the relevant OWNERS files, either directly or through an alias, can act as APPROVERS, including the individual who opened the PR. 
-  - Approvers look for holistic acceptance criteria, including dependencies with other features, forwards/backwards compatibility, API and flag definitions, etc
-  - for ``falco`` and ``libs``
-  repositeries we require double approval from maintainers and we should explain why and when using this strategy. 
-  - If the code changes look good to approver, an approver types ``/approve`` in a PR comment; if they change their mind, they ``/approve`` cancel
-  - Alongside the Prow workflow, Falco enforce GitHub reviews too. Simply using ``/approve`` is insufficient; approver must additionally select the 'Approved' checkbox and click the 'Submit review' button on the GitHub UI
-  - A positive GitHub review implies the approved label, so approver doesn't have to write ``/approve`` explicitly; however, ``test-infra`` repositery requires an explicit /approve
-  - Once all approver (atleast one) have approved, @poianna applies an ``approved`` label. 
+  - The PR author may `/assign` suggested approvers to the PR and optionally notify them (eg: pinging @someone for approval)
+  - Only [Maintainers](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#maintainers) (ie. people listed in the determined set of OWNERS `approvers` section) can act as **approvers** (including the individual who opened the PR; however, their self-approval is insufficient to merge the PR). 
+  - Approvers look for holistic acceptance criteria, including dependencies with other features, forward/backward compatibility, API and flag definitions, etc
+  -  If the code changes look good, an approver must select the _Approved_ checkbox and click the _Submit review_ button on the GitHub UI.
+     - This is required since The Falco Project enforces GitHub reviews alongside the Prow workflow.
+     - Furthermore, some repositories may require two (or more) positive GitHub reviews (notably https://github.com/falcosecurity/falco and https://github.com/falcosecurity/libs).
+  - A positive GitHub review implies the PR is approved and looks good, so the approver doesn't have to type `/approve` or `/lgtm` explicitly (however some repositories - notably https://github.com/falcosecurity/test-infra may require an explicit `/approve`).
+  - Once at least one approver has approved, [@poiana](https://github.com/poiana) applies the `approved` label.
 
 - Automation merges the PR: 
   - if all of the following are TRUE:
