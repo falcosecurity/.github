@@ -40,38 +40,38 @@ In The Falco Project, we strive to foster a positive and constructive environmen
 
 ## How the Review Process Works
 
- - The author submits a PR.
+- The author submits a PR.
+  - The PR author may `/assign` suggested approvers to the PR and optionally notify them (eg: pinging @someone for approval).
 
 - Automation ([@poiana](https://github.com/poiana)) suggests reviewers for the PR:
-
   - Determine the set of [OWNERS](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#repository-ownership) files.
-  - Choose at least two suggested *reviewers*, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR. 
+  - Choose at least two suggested reviewers, trying to find a unique reviewer for every leaf OWNERS file, and request their reviews on the PR.
+
 - Humans review the PR:
-   - Reviewers look for general code quality, correctness, style and follow [reviewers guideline](#guidelines-for-code-reviewers)
-   - Anyone in the determined set of OWNERS (including both `reviewers` and `approvers`) can act as a reviewer, with the exception of the individual who opened the PR.
-   - If the code changes look good to them, a reviewer types `/lgtm` in a PR comment; if they change their mind, they can use `/lgtm cancel.`
+   - Any [Maintainers](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#maintainers) and [Reviewers](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#reviewers) (ie. people listed in the determined set of OWNERS including both the `approvers` and `reviewers` sections) can act as **reviewers** (note that `approvers` can review and approve in a single step; see below).
+   - Reviewers look for general code quality, correctness, style and follow [reviewers guideline](#guidelines-for-code-reviewers).
+   - If the code changes look good to them, a reviewer types `/lgtm` in a PR comment; if they change their mind, they can use `/lgtm cancel`.
    - Once a reviewer has `/lgtm`'ed, [@poiana](https://github.com/poiana) applies an `lgtm` label to the PR.
 
 - Humans approve the PR:
-  - The PR author may `/assign` suggested approvers to the PR and optionally notify them (eg: pinging @someone for approval)
-  - Only [Maintainers](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#maintainers) (ie. people listed in the determined set of OWNERS `approvers` section) can act as **approvers** (including the individual who opened the PR; however, their self-approval is insufficient to merge the PR). 
-  - Approvers look for holistic acceptance criteria, including dependencies with other features, forward/backward compatibility, API and flag definitions, etc
-  -  If the code changes look good, the approver navigates to the _Reviews changes_ section in the GitHub UI. They check the GitHub _Approve_ button and finally click _Submit review_ to formally approve the PR.
+  - Only [Maintainers](https://github.com/falcosecurity/evolution/blob/main/GOVERNANCE.md#maintainers) (ie. people listed in the determined set of OWNERS `approvers` section) can act as **approvers** (including the individual who opened the PR; however, their self-approval is insufficient to merge the PR).
+  - Approvers look for holistic acceptance criteria, including dependencies with other features, forward/backward compatibility, API and flag definitions, etc.
+  - If the code changes look good, the approver navigates to the _Reviews changes_ section in the GitHub UI. They check the GitHub _Approve_ button and finally click _Submit review_ to formally approve the PR.
      - This is required since The Falco Project enforces GitHub reviews alongside the Prow workflow.
      - Furthermore, some repositories may require two (or more) positive GitHub reviews (notably https://github.com/falcosecurity/falco and https://github.com/falcosecurity/libs).
   - A positive GitHub review implies the PR is approved and looks good, so the approver doesn't have to type `/approve` or `/lgtm` explicitly (however some repositories - notably https://github.com/falcosecurity/test-infra may require an explicit `/approve`).
   - Once at least one approver has approved, [@poiana](https://github.com/poiana) applies the `approved` label.
 
-- Automation merges the PR: 
+- Automation merges the PR:
   - If all of the following are **true**:
     - All required labels are present (eg: `lgtm`, `approved`);
-    - Any blocking labels are missing  (eg: there is no `do-not-merge/hold`, `needs-rebase`):
+    - Any blocking labels are missing  (eg: there is no `do-not-merge/hold`, `needs-rebase`);
     - All GitHub PR checks marked as _required_ are passing;
     - The PR got sufficient approving GitHub review(s) (usually, only one positive review is sufficient).
- - And if any of the following are true:
-    - There are no presubmit Prow jobs configured for this repo; 
-    - There are presubmit Prow jobs configured for this repo, and they all pass after automatically being re-run one last time. 
-  - Then PR will automatically be merged by [@poiana](https://github.com/poiana).
+  - And if any of the following are true:
+    - There are no presubmit Prow jobs configured for this repo;
+    - There are presubmit Prow jobs configured for this repo, and they all pass after automatically being re-run one last time.
+   - Then PR will automatically be merged by [@poiana](https://github.com/poiana).
 
 ## Thank You Note
 
