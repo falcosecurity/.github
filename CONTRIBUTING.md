@@ -138,12 +138,9 @@ The PR template is there to guide you through the process of opening it.
 
 Also, feel free to suggest a reviewer with `/cc @theirname`, or to assign an assignee using `/assign @nickname`.
 
-Once your reviewer is happy, they will say `/lgtm`, which will apply the
-`lgtm` label, and will apply the `approved` label if they are an
-[owner](/OWNERS) of the repository or sub directory.
+Once your PR is submitted, reviewers and maintainers will review it (note that draft or `wip:` PRs are usually skipped until ready). For more details, check out our [code review process](contributing/review-process.md).
 
-Your PR will be automatically merged once it has the `lgtm` and `approved`
-labels, does not have any `do-not-merge/*` labels, and all status checks (eg., rebase, tests, DCO) are positive.
+Your PR will be automatically merged once it has all the required positive reviews and labels (like `lgtm` and `approved`), does not have any `do-not-merge/*` labels, and all *required* status checks (e.g., rebase, tests, DCO) are passing.
 
 ### Resolving Conflicts by Rebasing
 
@@ -151,7 +148,7 @@ When submitting a pull request, it's important to make sure that it can be clean
 
 To resolve conflicts, we always use the `git rebase` command rather than git merge. This helps to ensure a clean and linear history of commits.
 
-First of all we take for granted some assumptions:
+First of all, we take for granted some assumptions:
 
 - the contributor is using a **fork**
 
