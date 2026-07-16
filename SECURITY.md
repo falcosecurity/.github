@@ -10,18 +10,18 @@ Security fixes are typically applied only to the latest release (at least until 
 
 ## Falco's threat model
 
-Falco is a **runtime security detection** tool: it observes events from the systems it monitors evaluates them against a ruleset, and emits alerts. It **detects and notifies; it does not enforce, block, or isolate**. So evading Falco is not the same as defeating an enforcement control.
+Falco is a **runtime security detection** tool: it observes events from the systems it monitors, evaluates them against a ruleset, and emits alerts. It **detects and notifies; it does not enforce, block, or isolate**. So evading Falco is not the same as defeating an enforcement control.
 
 Two facts shape what counts as a vulnerability:
 
-- **Falco runs as a trusted, privileged component**, configured by the operator, with high privilege (root / `CAP_SYS_ADMIN`, kernel instrumentation) on the host it monitors.
+- **Falco runs as a trusted, privileged component**, configured by the operator, with high privilege (root or an equivalent set of Linux capabilities, kernel instrumentation) on the host it monitors.
 - **Detection coverage comes from tunable rules and is expected to evolve.** Falco cannot detect every technique; gaps in rule coverage are detection-content improvements, not vulnerabilities.
-
 
 ### Trust boundaries
 
-- **Trusted (operator-controlled) inputs.** Falco's configuration, rules files, loaded plugins, and any capture files (`.scap`) the operator chooses to replay come from the operator, who already fully controls the host. Malformed or malicious operator-supplied input is a robustness bug, not a vulnerability, because the operator is inside the trust boundary.
+- **Trusted (operator-controlled) inputs.** Falco's configuration, rules files, loaded plugins, and any capture files (`.scap`) the operator chooses to replay are all selected by the operator, who already fully controls the host. Malformed or malicious operator-supplied input is a robustness bug, not a vulnerability, because the operator is inside the trust boundary and accepts the risk of what they choose to replay.
 - **Untrusted inputs.** The event data Falco ingests from the workloads it monitors (e.g., syscalls produced by potentially malicious processes or containers, and plugin-sourced events that may be attacker-influenced) crosses a trust boundary from the monitored environment into Falco.
+- **Artifact distribution.** The rules and plugins (and any other artifact kind) an operator installs are trusted, but their integrity in transit is established by `falcoctl` at install time, not by Falco when it loads them. Which registry to trust, whether to require signatures, and what an index contains are operator choices, inside the trust boundary. A *silent* failure to verify an artifact the operator expected to be verified is a vulnerability.
 
 ### What we protect
 
@@ -33,7 +33,7 @@ The categories below are **illustrative, not exhaustive**. Every report is asses
 
 We treat as **vulnerabilities** issues that defeat Falco's security value:
 
-- **Silent detection bypass**: a technique, reachable from the untrusted side, that defeats the integrity of the detection pipeline (engine, drivers, event handling) so that activity Falco should detect produces no alert and the evasion is not otherwise observable. This concerns the integrity of the *mechanism*, not the completeness of rule *content*.
+- **Silent detection bypass**: a technique, reachable from the untrusted side, that defeats the integrity of the detection pipeline (engine, drivers, event handling) so that activity Falco should detect produces no alert and the evasion is not otherwise observable. This concerns the integrity of the *mechanism*, not the completeness of rule *content*. A rule that simply does not cover a technique is a content gap.
 - **Remote code execution or compromise of Falco**: code execution over, or control of, the Falco process or its components via data or an interface crossing a trust boundary.
 - **Privilege escalation through Falco**: a default, supported deployment letting an entity gain privileges it should not have without already holding equivalent access.
 
